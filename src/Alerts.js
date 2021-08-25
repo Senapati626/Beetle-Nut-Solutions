@@ -5,6 +5,7 @@ import './styles/Alert.css';
 import {FiPhoneCall} from 'react-icons/fi';
 import {RiStore3Fill} from 'react-icons/ri';
 import {GrUserManager} from 'react-icons/gr';
+import {io} from 'socket.io-client';
 
 class Alerts extends React.Component{
     constructor(){
@@ -12,10 +13,17 @@ class Alerts extends React.Component{
         this.state = {
             notifications: [],
             user: [],
-            count: ''
+            count: '',
+            notify: [],
+            arr: []
         }
     }
     componentDidMount(){
+        const socket = io('http://localhost:3001');
+        socket.on('connection');
+        socket.on(('alert'),(data)=>{
+            this.setState({notify: data})
+        });
         //Post request for all the alerts for branch.
         Axios.post('http://localhost:3001/alerts',{
             username: this.props.username
@@ -32,12 +40,20 @@ class Alerts extends React.Component{
         })
         .then(response=>this.setState({user: response.data[0]}));
     }
+    componentDidUpdate(prevProps,prevState){
+        if(prevState.notify !== this.state.notify){
+            if(this.state.user.Pincode_covered.includes(this.state.notify[2])){
+                this.setState({arr: this.state.arr.concat([this.state.notify])})
+            }
+        }
+    }
     render(){
-        const {user,count} = this.state;
+        const {user,count,arr} = this.state;
+        console.log(arr)
         return(
             <div className="alert_wrapper">
             <div className="alert_count">
-                <p>{count}</p>
+                <p>{count + arr.length}</p>
             </div>
             <div className="alert_wrapper_left">
                 <div className="branch_img_holder">
@@ -57,20 +73,26 @@ class Alerts extends React.Component{
             <div className="alert_wrapper_right">
             {this.state.notifications.length!==0 ?
             <div className="alerts">
-                <div className="alert_tab" style={{background: 'cyan'}}>
-                <div className="alert_tab_text">
-                <p>{this.state.notifications[0].client} was looking for a beetle nut store in your location.</p>
+                <div className="alert_wrappers">
+                {arr.length > 0 ? arr.reverse().map((item,index)=>{
+                    return(
+                        <div className="alert_tab recent_alert" style={{background:'rgb(248, 166, 228)'}}>
+                        <div className="alert_tab_text">
+                        <p><strong>{item[0].toUpperCase()}</strong> was just looking for a beetle nut store within a location you deliver.</p>
+                        </div>
+                        <div className="alert_tab_cont">
+                        <p><strong>Email- </strong>{item[1]}</p>
+                        </div>
+                        </div>
+                    )
+                }) : <div></div>}
                 </div>
-                <div className="alert_tab_cont">
-                <p><strong>Email- </strong>{this.state.notifications[0].client_email}</p>
-                <p>{this.state.notifications[0].date}</p>
-                </div>
-                </div>
-                {this.state.notifications.slice(1,this.state.notifications.length).map((item,index)=>{
+                <div className="alert_wrappers">
+                {this.state.notifications.map((item,index)=>{
                     return(
                         <div className="alert_tab">
                         <div className="alert_tab_text">
-                        <p>{item.client} was looking for a beetle nut store in your location.</p>
+                        <p><strong>{item.client.toUpperCase()}</strong> was looking for a beetle nut store in your location.</p>
                         </div>
                         <div className="alert_tab_cont">
                         <p><strong>Email- </strong>{item.client_email}</p>
@@ -79,6 +101,7 @@ class Alerts extends React.Component{
                         </div>
                     )
                 })}
+                </div>
             </div> : <div style={{textAlign:"center"}}><h1>No alerts to show.</h1></div>
             }
             </div>

@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Branches from './Client';
 import './styles/Client.css';
 import {FcSearch} from 'react-icons/fc'; 
+import {io} from 'socket.io-client';
 
 class Home extends React.Component{
     constructor(){
@@ -32,8 +33,11 @@ class Home extends React.Component{
         alert('An email address must contain the characters @ and .')
       }
       else{
+      const socket = io('http://localhost:3001');
+      socket.on('connection');
+      socket.emit('alert',[this.state.name,this.state.email,this.state.pin]);
       Axios.post('http://localhost:3001/shows',{
-        pin: this.state.pin
+        pin: this.state.pin,
       })
       .then(response=>this.setState({users:response.data}))
       .then(this.setState({route: 'branches'}))
