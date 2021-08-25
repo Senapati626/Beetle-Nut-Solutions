@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+.welcome{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 4fr;
+    position: relative;
+    overflow: hidden;
+}
+.welcome_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.5);
+}
+.welcome_header h1{
+    font-size: 50px;
+    color:rgb(187, 4, 224);
+    font-family: cursive;
+}
+.welcome_header p{
+    font-size: 25px;
+}
+.link_wrapper{
+    position: relative;
+    margin: 5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    background-color: rgba(255,255,255,0.5);
+    padding: 4em;
+    border-radius: 20px;
+    z-index: 1;
+}
+.links{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: fit-content;
+    font-size: 1.5em;
+    padding: 0.5em 0.75em;
+    box-shadow: 5px 5px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+.links p{
+    margin-left: 10px;
+    color: white;
+}
+.purple{
+    background: rgb(218, 42, 253);
+}
+.green{
+    background: rgb(85, 126, 3);
+}
+.blue{
+    background: rgb(55, 55, 245);
+}
+.imgA{
+    position: absolute;
+    width: 280px;
+    bottom: 0;
+    right: 0;
+    outline: 20px solid rgb(245, 174, 43);
+    margin: 50px;
+    transform: rotateZ(30deg);
+    opacity: 0.65;
+}
+.imgB{
+    position: absolute;
+    left: 0;
+    top: 35%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    border: 20px solid gainsboro;
+    font-family: 'Caveat', cursive;
+    transform: rotateZ(-35deg);
+}
+.imgB img{
+    width: 500px;
+    filter: grayscale();
+    opacity: 0.75;
+}
+.imgC{
+  width: 200px; 
+  position: absolute;
+  top: 0;
+  right: 20px;
+  opacity: 0.75; 
+}
