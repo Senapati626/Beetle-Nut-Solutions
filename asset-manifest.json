@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Beetle-Nut-Solutions/static/css/main.a3effe7a.chunk.css",
+    "main.js": "/Beetle-Nut-Solutions/static/js/main.60db79e0.chunk.js",
+    "main.js.map": "/Beetle-Nut-Solutions/static/js/main.60db79e0.chunk.js.map",
+    "runtime-main.js": "/Beetle-Nut-Solutions/static/js/runtime-main.b48e104b.js",
+    "runtime-main.js.map": "/Beetle-Nut-Solutions/static/js/runtime-main.b48e104b.js.map",
+    "static/js/2.b087dabf.chunk.js": "/Beetle-Nut-Solutions/static/js/2.b087dabf.chunk.js",
+    "static/js/2.b087dabf.chunk.js.map": "/Beetle-Nut-Solutions/static/js/2.b087dabf.chunk.js.map",
+    "static/js/3.38586fa7.chunk.js": "/Beetle-Nut-Solutions/static/js/3.38586fa7.chunk.js",
+    "static/js/3.38586fa7.chunk.js.map": "/Beetle-Nut-Solutions/static/js/3.38586fa7.chunk.js.map",
+    "index.html": "/Beetle-Nut-Solutions/index.html",
+    "static/css/main.a3effe7a.chunk.css.map": "/Beetle-Nut-Solutions/static/css/main.a3effe7a.chunk.css.map",
+    "static/js/2.b087dabf.chunk.js.LICENSE.txt": "/Beetle-Nut-Solutions/static/js/2.b087dabf.chunk.js.LICENSE.txt",
+    "static/media/simpson.6a7ace20.png": "/Beetle-Nut-Solutions/static/media/simpson.6a7ace20.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b48e104b.js",
+    "static/js/2.b087dabf.chunk.js",
+    "static/css/main.a3effe7a.chunk.css",
+    "static/js/main.60db79e0.chunk.js"
+  ]
+}
