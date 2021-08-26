@@ -13,6 +13,7 @@ export default function Welcome(){
                 <Link to="/branch" className="links green"><FcShop/><p>Login for a Branch</p></Link>
                 <Link to="/admin" className="links blue"><FcBusinessman/><p>Login as Administrator</p></Link>
             </div>
+            <div><p style={{fontSize:"14px",color:"gray"}}>Designed and Developed by Neellohit S.</p></div>
             <img src='https://i.pinimg.com/originals/1e/af/60/1eaf6010c2544841b63b9d34705827df.jpg' alt='' className="imgA"/>
             <div className="imgB">
                 <img src='https://upload.wikimedia.org/wikipedia/commons/6/65/2008-1226-Pasadena-003-CityHall.jpg' alt=''/>
