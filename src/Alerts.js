@@ -19,7 +19,7 @@ class Alerts extends React.Component{
         }
     }
     componentDidMount(){
-        const socket = io('http://beetle-nuts-backend123.herokuapp.com');
+        const socket = io('https://beetle-nuts-backend123.herokuapp.com');
         socket.on('connection');
         socket.on(('alert'),(data)=>{
             this.setState({notify: data})
