@@ -14,15 +14,16 @@
     justify-content: flex-end;
     align-items: center;
     z-index: 1;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(245,245,245,0.5);
+    text-align: center;
 }
 .welcome_header h1{
-    font-size: 50px;
+    font-size: 3em;
     color:rgb(187, 4, 224);
     font-family: cursive;
 }
 .welcome_header p{
-    font-size: 25px;
+    font-size: 1.5em;
 }
 .link_wrapper{
     position: relative;
@@ -31,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 3em;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(245,245,245,0.5);
     padding: 4em;
     border-radius: 20px;
     z-index: 1;
@@ -45,7 +46,7 @@
     padding: 0.5em 0.75em;
     box-shadow: 5px 5px rgba(0,0,0,0.3);
     border-radius: 10px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(245,245,245,0.5);
     cursor: pointer;
 }
 .links p{

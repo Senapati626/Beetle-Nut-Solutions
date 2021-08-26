@@ -71,7 +71,6 @@
 .alert_tab_text{
     width: 100%;
     display: flex;
-    font-size: 18px;
 }
 .alert_tab_cont{
     display: flex;

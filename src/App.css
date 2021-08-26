@@ -4,10 +4,11 @@
     box-sizing: border-box;
 }
 .app{
-    background: whitesmoke;
+    background: rgb(245, 245, 245);
     width: 100%;
     min-height: 100vh;
     position: relative;
+    font-size: 18px;
 }
 .navbar{
     position: absolute;
@@ -15,4 +16,10 @@
     text-decoration:none;
     margin: 12px;
     z-index: 99;
+}
+
+@media screen and (max-width:500px){
+    .app{
+        font-size: 12px;
+    }
 }
