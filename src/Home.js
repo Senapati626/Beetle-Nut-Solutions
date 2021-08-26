@@ -33,15 +33,15 @@ class Home extends React.Component{
         alert('An email address must contain the characters @ and .')
       }
       else{
-      const socket = io('http://localhost:3001');
+      const socket = io('https://beetle-nuts-backend123.herokuapp.com');
       socket.on('connection');
       socket.emit('alert',[this.state.name,this.state.email,this.state.pin]);
-      Axios.post('http://localhost:3001/shows',{
+      Axios.post('https://beetle-nuts-backend123.herokuapp.com/shows',{
         pin: this.state.pin,
       })
       .then(response=>this.setState({users:response.data}))
       .then(this.setState({route: 'branches'}))
-      Axios.post('http://localhost:3001/insert',{
+      Axios.post('https://beetle-nuts-backend123.herokuapp.com/insert',{
         pin: this.state.pin,
         name: this.state.name,
         email: this.state.email

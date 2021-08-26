@@ -18,7 +18,7 @@ class Admin extends React.Component{
         this.setState({password:e.target.value})
     }
     onPassSubmit = ()=>{
-        Axios.get('http://localhost:3001/admin')
+        Axios.get('https://beetle-nuts-backend123.herokuapp.com/admin')
             .then(response=>this.setState({records:response.data}));
         if(this.state.password==='admin'){
             this.setState({route: 'signedin'})

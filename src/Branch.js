@@ -21,7 +21,7 @@ onPasswordChange = (e)=>{
     this.setState({password: e.target.value})
 }
 onSignIn = ()=>{
-    Axios.post('http://localhost:3001/signin',{
+    Axios.post('https://beetle-nuts-backend123.herokuapp.com/signin',{
         username: this.state.username,
         password: this.state.password
     })
@@ -29,7 +29,7 @@ onSignIn = ()=>{
     .then(response=>response.data.length ?  this.setState({route: 'signedin'}): alert('Incorrect Credentials'))
 }
 componentDidMount(){
-    Axios.post('http://localhost:3001/alerts',{
+    Axios.post('https://beetle-nuts-backend123.herokuapp.com/alerts',{
         username: this.state.username
     })
     .then(response=>console.log(response));
