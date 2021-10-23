@@ -19,23 +19,23 @@ class Alerts extends React.Component{
         }
     }
     componentDidMount(){
-        const socket = io('https://beetle-nuts-backend123.herokuapp.com');
+        const socket = io('http://localhost:3001');
         socket.on('connection');
         socket.on(('alert'),(data)=>{
             this.setState({notify: data})
         });
         //Post request for all the alerts for branch.
-        Axios.post('https://beetle-nuts-backend123.herokuapp.com/alerts',{
+        Axios.post('http://localhost:3001/alerts',{
             username: this.props.username
         })
         .then(response=>this.setState({notifications:response.data}));
         // Post request for the count of number of alerts.
-        Axios.post('https://beetle-nuts-backend123.herokuapp.com/count',{
+        Axios.post('http://localhost:3001/count',{
             username: this.props.username
         })
         .then(response=>this.setState({count:response.data[0].count}));
         // Post request for branch details.
-        Axios.post('https://beetle-nuts-backend123.herokuapp.com/details',{
+        Axios.post('http://localhost:3001/details',{
             username: this.props.username
         })
         .then(response=>this.setState({user: response.data[0]}));
